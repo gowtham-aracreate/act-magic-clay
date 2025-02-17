@@ -1,2 +1,4 @@
 # act-magic-clay
-hi
+
+
+This is a training session
