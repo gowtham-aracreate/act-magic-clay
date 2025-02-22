@@ -1,21 +1,30 @@
 import { useState } from 'react'
 import './App.css'
-import Header from './layout/Header'
-import Sidebar from './layout/Sidebar'
-import Dashboard from './layout/Dashboard'
-
+import RegisterForm from './Component/RegisterForm'
+import Register from './page/Register'
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Login from './page/Login'
+import Email from './page/Email'
+import ToggleButton from './Component/ToggleButton'
+import AddProduct from './Component/AddProduct'
+import Payment from './Component/Payment'
 function App() {
   const [count, setCount] = useState(0)
   const showAllItems = true;
 
   return (
-    <div className="flex bg-gray-200">
-    <Sidebar showAllItems={showAllItems} />
-    <div className="flex-1 flex flex-col bg-gray-200">
-    <Header showAllItems={showAllItems} />
-    <Dashboard/>
-    </div>
-  </div>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Register />} path='/register' />
+        <Route element={<Login />} path='/login' />
+        <Route element={<ToggleButton />} path='/togglebutton' />
+        <Route element={<Email />} path='/email' />
+        <Route element={<AddProduct />} path='/addproduct' />
+        <Route element={<Payment />} path='/payment' />
+
+      </Routes>
+    </BrowserRouter>
+
   )
 }
 
