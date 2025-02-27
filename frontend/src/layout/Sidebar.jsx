@@ -67,7 +67,7 @@ import logout from "../images/logout.svg";
 
 const Sidebar = ({ showAllItems }) => {
   return (
-    <div className="flex flex-col h-full justify-between  w-1/6 bg-white dark:bg-gray-900 rounded-br-3xl">
+    <div className="flex flex-col h-full justify-between  w-1/6 bg-white dark:bg-gray-900 rounded-br-3xl fixed">
       <div className="space-y-4 ">
         <h1 className="text-5xl font-normal" style={{ fontFamily: 'Macondo Swash Caps, cursive' }}>Magic Clay</h1>
         <p className="mb-6 mt-12 text-sm text-gray-400 dark:text-gray-100 pl-4">MENU</p>
@@ -84,7 +84,7 @@ const Sidebar = ({ showAllItems }) => {
                    <img src={account} alt="Account Icon" className="h-6 w-6" />
                    <span className="text-lg font-medium text-gray-400 m-2 hover:text-black dark:text-gray-100 dark:hover:text-white">Account</span>
                 </div>
-                <div className="flex items-center space-x-2 mb-12 pl-4 mb-8  mt-[374px]">
+                <div className="flex items-center space-x-2 mb-12 pl-4   mt-[374px]">
                 <img src={logout} alt="Logout Icon" className="h-6 w-6" />
                 <span className="text-lg font-medium text-gray-400 hover:text-black dark:text-gray-100 dark:hover:text-white">Logout</span>
               </div>
@@ -145,7 +145,11 @@ const Sidebar = ({ showAllItems }) => {
               <img src={wallet} alt="Wallet Icon" className="h-6 w-6 hover-wallet" />
               <a href="#" className="text-lg font-medium text-gray-400 m-2 hover:text-black dark:text-gray-100 dark:hover:text-white">Wallet</a>
             </div>
-            <div className="flex items-center space-x-2 mb-12 pl-4 mb-8 mt-[220px]">
+            <div className="flex items-center space-x-2 pl-4">
+                   <img src={account} alt="Account Icon" className="h-6 w-6" />
+                   <span className="text-lg font-medium text-gray-400 m-2 hover:text-black dark:text-gray-100 dark:hover:text-white">Account</span>
+                </div>
+            <div className="flex items-center space-x-2 mb-8 pl-4  mt-[140px]">
   <img src={logout} alt="Logout Icon" className="h-6 w-6" />
   <span className="text-lg font-medium text-gray-400 hover:text-black dark:text-gray-100 dark:hover:text-white">Logout</span>
 </div>

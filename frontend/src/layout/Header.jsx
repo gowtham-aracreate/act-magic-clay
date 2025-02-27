@@ -69,8 +69,8 @@ const Header = ({ showAllItems }) => {
   if (showAllItems) {
     userInfo = (
       <>
-        <button  className='rounded-lg bg-black text-white px-8 py-2'>Add Product</button>
-        <div className='mr-2 flex fixed top-2 right-2'>
+        
+        <div className='mr-2 flex fixed top-2 right-2 z-1'>
           <div className='flex-col pt-4'>
             <p className='font-bold'>Ann</p>
             <p>Seller</p>
@@ -124,6 +124,8 @@ const Header = ({ showAllItems }) => {
         />
         <label htmlFor="search" className="sr-only">Search</label>
       </div>
+      <button  className='rounded-lg bg-black text-white px-8 py-2'><a href="/addproduct">Add Product</a></button>
+      
       {userInfo}
     </div>
   );
