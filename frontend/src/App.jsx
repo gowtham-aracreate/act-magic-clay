@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import RegisterForm from './Component/RegisterForm'
 import Register from './page/Register'
@@ -10,10 +8,18 @@ import Email from './page/Email'
 import ToggleButton from './Component/ToggleButton'
 import AddProduct from './Component/AddProduct'
 import Payment from './Component/Payment'
+<<<<<<< HEAD
 import PaymentCard from './Component/PaymentCard'
 import Home from './Component/Home'
+=======
+import Dashboard from './layout/Dashboard'
+import OtpValidation from './Component/OtpValidation'
+
+
+>>>>>>> dev
 function App() {
   const [count, setCount] = useState(0)
+  const showAllItems = true;
 
   return (
     <BrowserRouter>
@@ -24,10 +30,16 @@ function App() {
         <Route element={<Email />} path='/email' />
         <Route element={<AddProduct />} path='/addproduct' />
         <Route element={<Payment />} path='/payment' />
+<<<<<<< HEAD
         <Route element={<PaymentCard />} path='/paymentcard' />
         <Route element={<Home />} path='/home' />
 
 
+=======
+        <Route element={<Dashboard/>} path='/dashboard' />
+        <Route element={<OtpValidation/>} path='/otpvalidation'/>
+       
+>>>>>>> dev
       </Routes>
     </BrowserRouter>
 
