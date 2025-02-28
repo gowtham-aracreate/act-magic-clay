@@ -6,6 +6,8 @@ import Toggle from '../Component/ToggleButton'
 
 
 const RegisterForm = () => {
+
+
   return (
     <div className=' w-full flex flex-col'>
 
