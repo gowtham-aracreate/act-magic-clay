@@ -6,6 +6,9 @@ import passimg from '../images/fi-rr-lock.png';
 import Toggle from '../Component/ToggleButton';
 
 const RegisterForm = () => {
+<<<<<<< HEAD
+
+=======
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -71,6 +74,7 @@ const RegisterForm = () => {
   //   alert('Registration failed: ' + error.message);
   // }
 // };
+>>>>>>> dev
 
   return (
     <div className='w-full flex flex-col fixed'>
