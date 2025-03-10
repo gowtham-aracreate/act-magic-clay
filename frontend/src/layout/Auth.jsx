@@ -1,5 +1,5 @@
 import React from 'react'
-import authImage from "../images/auth3.png"
+import authImage from "../assets/images/auth3.png"
 
 const Auth = ({ children }) => {
     return (
@@ -13,7 +13,7 @@ const Auth = ({ children }) => {
             </div>
 
         </div>
-       
+
     )
 }
 

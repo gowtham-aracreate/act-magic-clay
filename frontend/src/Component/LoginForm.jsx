@@ -112,8 +112,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import emailimg from '../images/vector.png';
-import passimg from '../images/fi-rr-lock.png';
+import emailimg from '../assets/images/vector.png';
+import passimg from '../assets/images/fi-rr-lock.png';
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
@@ -137,11 +137,11 @@ const LoginForm = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/login', { email, password });
+      const response = await axios.post('http://localhost:5001/login', { email, password });
       if (response.status === 200) {
-        alert('Login successful! Sending OTP...');
-        await axios.post('http://localhost:5000/send-otp', { email });
-        navigate('/otp-validation', { state: { email } });
+        alert('Login successful!');
+
+        navigate('/dashboard', { state: { email } });
       } else {
         alert('Login failed: ' + response.data.msg);
       }
