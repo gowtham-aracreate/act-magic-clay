@@ -1,6 +1,7 @@
-import React from 'react';
+// import React from 'react';
 
 // Single Transaction Component
+// eslint-disable-next-line react/prop-types
 const Transaction = ({ type, entity, dateTime, amount, status }) => {
   const statusStyles = {
     Pending: 'bg-blue-900 text-white w-[141px] h-[40px] justify-center items-center rounded-2xl pl-8',
@@ -32,6 +33,7 @@ const Transaction = ({ type, entity, dateTime, amount, status }) => {
 };
 
 // Transaction List Component
+// eslint-disable-next-line react/prop-types
 const TransactionsList = ({ transactions }) => {
   return (
     <div className="w-[1120px] h-[611px] mx-auto bg-white shadow-md rounded-lg">
