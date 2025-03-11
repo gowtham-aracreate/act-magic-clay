@@ -115,7 +115,7 @@ const Sidebar = ({ showAllItems }) => {
                     <img src={account} alt="Account Icon" className="h-6 w-6" />
                     <span className="text-lg font-medium text-gray-400 m-2 hover:text-black dark:text-gray-100 dark:hover:text-white">Account</span>
                   </div>
-                  <div className="flex items-center space-x-2 mb-8 pl-4  mt-[460px]">
+                  <div className="flex items-center space-x-2 mb-8 pl-4  mt-[400px]">
                     <img src={logout} alt="Logout Icon" className="h-6 w-6" />
                     <span className="text-lg font-medium text-gray-400 hover:text-black dark:text-gray-100 dark:hover:text-white">Logout</span>
                   </div>
