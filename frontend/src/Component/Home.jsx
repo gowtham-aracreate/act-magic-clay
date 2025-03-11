@@ -1,11 +1,12 @@
 import React from 'react'
 import card0 from '../assets/images/card0.svg'
-import card1 from '../assets/images/card1.svg'
-import card2 from '../assets/images/card2.svg'
-import card3 from '../assets/images/card3.svg'
-import card4 from '../assets/images/card4.svg'
+import img1 from '../assets/images/img1.svg'
+import img2 from '../assets/images/img2.svg'
+import img3 from '../assets/images/img3.svg'
+import img4 from '../assets/images/img4.svg'
 import card5 from '../assets/images/0.svg'
 import home1 from '../assets/images/home1.svg'
+import HomePageCard from './HomePageCard'
 
 
 const Home = () => {
@@ -24,57 +25,21 @@ const Home = () => {
                     <a href="#">Security</a>
                     <a href="#">About us</a>
                 </div>
-                <div className=' absolute '>
-                    <img src={home1} className=' w-screen h-[848px] ' />
+                <div className=' absolute p-24 '>
+
+
+
                 </div>
             </div>
 
-
             <h1 className='text-6xl pl-12 pt-14'>Popular Daily</h1>
 
-            <div className='flex mt-7 px-[50px] gap-[150px]'>
-                <div className='relative w-[228px] h-[320px]'>
-                    <img src={card0} className='w-[228px] h-[320px] object-cover rounded-xl' />
-                    <div className='w-full h-[130px] bg-[#D9D9D9] rounded-xl opacity-70 absolute bottom-0 flex justify-center items-center'>
-                        <p className=' flex justify-center items-center flex-col'>Calco:</p>
-                        <p className=' flex justify-center items-center gap-1 flex-col'>$ 80.00</p>
-                    </div>
-                </div>
-
-                <div className='relative w-[228px] h-[320px]'>
-                    <img src={card1} className='w-[228px] h-[320px] object-cover rounded-xl' />
-                    <div className='w-full h-[130px] bg-[#D9D9D9] rounded-xl opacity-70 absolute bottom-0 flex justify-center items-center'>
-                        <p>Calco</p>
-                        <p>Calco</p>
-                    </div>
-                </div>
-
-                <div className='relative w-[228px] h-[320px]'>
-                    <img src={card2} className='w-[228px] h-[320px] object-cover rounded-xl' />
-                    <div className='w-full h-[130px] bg-[#D9D9D9] rounded-xl opacity-70 absolute bottom-0 flex justify-center items-center'>
-                        <p>Calco</p>
-                        <p>Calco</p>
-                    </div>
-                </div>
-
-                <div className='relative w-[228px] h-[320px]'>
-                    <img src={card3} className='w-[228px] h-[320px] object-cover rounded-xl' />
-                    <div className='w-full h-[130px] bg-[#D9D9D9] rounded-xl opacity-70 absolute bottom-0 flex justify-center items-center'>
-                        <p>Calco</p>
-                        <p>Calco</p>
-                    </div>
-                </div>
-
-                <div className='relative w-[228px] h-[320px]'>
-                    <img src={card4} className='w-[228px] h-[320px] object-cover rounded-xl' />
-                    <div className='w-full h-[130px] bg-[#D9D9D9] rounded-xl opacity-70 absolute bottom-0 flex justify-center items-center'>
-                        <p>Calco</p>
-                        <p>Calco</p>
-                    </div>
-                </div>
-
-
-
+            <div className=' grid grid-cols-5'>
+                <HomePageCard src={card0} />
+                <HomePageCard src={img1} />
+                <HomePageCard src={img2} />
+                <HomePageCard src={img3} />
+                <HomePageCard src={img4} />
             </div>
 
             <div className=' bg-[#EFEFEF] flex mt-20 pl-12 py-20'>

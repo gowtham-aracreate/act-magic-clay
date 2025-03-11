@@ -1,9 +1,11 @@
 import { useState } from 'react';
+
+import React, { useState } from 'react';
 import axios from 'axios';
 import userimg from '../assets/images/fi-rr-user.png';
 import emailimg from '../assets/images/vector.png';
 import passimg from '../assets/images/fi-rr-lock.png';
-import Toggle from '../assets/Component/ToggleButton';
+import Toggle from '../Component/ToggleButton';
 
 const RegisterForm = () => {
   const [formData, setFormData] = useState({
@@ -31,7 +33,7 @@ const RegisterForm = () => {
       return;
     }
 
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!emailRegex.test(email)) {
       alert('Please enter a valid Gmail address.');
       return;
@@ -44,33 +46,25 @@ const RegisterForm = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/register', formData);
+
+      const checkResponse = await axios.post('http://localhost:5001/check-user', { name, email });
+      if (checkResponse.data.exists) {
+        alert('User with this name or email already exists. Please choose another one.');
+        return;
+      }
+
+      const response = await axios.post('http://localhost:5001/register', formData);
       if (response.status === 201) {
-        window.location.href = '/login'; 
+        localStorage.setItem('email', response.data.user.email);
+        window.location.href = '/email';
+
         console.log("hi")// Redirect to login page
       }
     } catch (error) {
       console.error('Registration failed:', error);
+      alert('Registration failed. Please try again.');
     }
   };
-  // try {
-  //   const response = await axios.post('http://localhost:5000/register', formData);
-  //   // if (response.status === 200) {
-  //   //   window.location.href = '/login';  
-  //   // } else {
-  //   //   alert('Registration failed: ' + response.data.msg);
-  //   // }
-  //   if(response){
-  //     if(response.data){
-  //       console.log(response.data)
-  //       alert(response.data.user.name);
-  //     }
-  //   }
-  // } catch (error) {
-  //   console.error('Registration failed:', error);
-  //   alert('Registration failed: ' + error.message);
-  // }
-// };
 
   return (
     <div className='w-full flex flex-col fixed'>
@@ -134,7 +128,7 @@ const RegisterForm = () => {
           </div>
 
           <button type="submit" className='w-[500px] h-[54px] text-2xl border-1 rounded-2xl cursor-pointer bg-black text-white mt-11'>
-           Register
+            Register
           </button>
         </form>
 

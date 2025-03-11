@@ -13,7 +13,7 @@ const Auth = ({ children }) => {
             </div>
 
         </div>
-       
+
     )
 }
 

@@ -120,6 +120,8 @@ const LoginForm = () => {
     email: '',
     password: '',
   });
+
+  const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -130,26 +132,25 @@ const LoginForm = () => {
     e.preventDefault();
     const { email, password } = formData;
 
-    // Validation checks
     if (!email || !password) {
-      alert('Please fill in all required fields.');
+      setErrorMessage('Please fill in all required fields.');
       return;
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/login', { email, password });
+      const response = await axios.post('http://localhost:5001/login', { email, password });
       if (response.status === 200) {
-        alert('Login successful! Sending OTP...');
-        await axios.post('http://localhost:5000/send-otp', { email });
-        navigate('/otp-validation', { state: { email } });
+        alert('Login successful!');
+        navigate('/dashboard', { state: { email } });
       } else {
-        alert('Login failed: ' + response.data.msg);
+        setErrorMessage('Invalid email or password. Please try again.');
       }
     } catch (error) {
       console.error('Login failed:', error);
-      alert('Login failed: ' + error.message);
+      setErrorMessage('Login failed. Please check your credentials and try again.');
     }
   };
+
 
   return (
     <div className='w-full fixed'>
@@ -186,13 +187,19 @@ const LoginForm = () => {
         </div>
         <br /><br />
 
+
+        {errorMessage && (
+          <p className="text-red-500 mb-2">{errorMessage}</p>
+        )}
+
         <button type="submit" className='w-[500px] h-[64px] text-2xl border-1 rounded-2xl bg-black text-white'>
           Login
         </button>
       </form>
 
       <p className='text-[#8A8A8A] gap-3.5 mt-6'>
-        Don’t Have an Account? <a href="/register" className='w-full h-full text-black cursor-pointer'>Register</a>
+        Don’t Have an Account?{' '}
+        <a href="/register" className='w-full h-full text-black cursor-pointer'>Register</a>
       </p>
     </div>
   );
