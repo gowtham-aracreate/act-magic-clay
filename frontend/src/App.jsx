@@ -16,8 +16,8 @@ import HomeSlider from './Component/HomeSlider';
 import DashboardCard from './Component/DashboardCard'
 
 function App() {
-  const [count, setCount] = useState(0)
-  const showAllItems = true;
+  // const [count, setCount] = useState(0);
+  // const showAllItems = true;
 
   return (
     <BrowserRouter>
@@ -41,8 +41,7 @@ function App() {
 
       </Routes>
     </BrowserRouter>
-
-  )
+  );
 }
 
-export default App
+export default App;
