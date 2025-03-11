@@ -7,8 +7,8 @@ const DashboardCard = (props) => {
             <div className='relative w-[200px] h-[300px]'>
                 <img src={props.src} className='w-[200px] h-[300px] object-cover rounded-xl' />
                 <div className='w-[200px] h-[130px] bg-[#D9D9D9] rounded-xl opacity-70 absolute bottom-0 flex flex-col justify-center items-center'>
-                    <p className=' text-4xl'>{props.name}</p>
-                    <p className=' text-[32px] text-gray-500'>$ 80.00</p>
+                    <p className=' text-4xl'>Calco</p>
+                    <p className=' text-[32px] text-gray-700'>$ 80.00</p>
                 </div>
             </div>
         </div>
