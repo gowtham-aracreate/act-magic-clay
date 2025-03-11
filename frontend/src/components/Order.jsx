@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Image from "../images/img.png";
+import Image from "../assets/images/img.png";
 
 const Order = () => {
   const [quantity, setQuantity] = useState(1);
