@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 const Summary = () => {
   return (
     <div className="flex justify-end -mt-[400px] mr-[250px]">
