@@ -68,6 +68,25 @@ const EmailForm = () => {
     }
   };
 
+  const resendOtp = async () => {
+    try {
+      const response = await axios.post('http://localhost:5001/resend-otp', {
+        email: localStorage.getItem('email'),
+      });
+
+      if (response.data.success) {
+        setTimer(45);
+        alert('A new OTP has been sent to your email.');
+      } else {
+        alert('Failed to resend OTP.');
+      }
+    } catch (error) {
+      console.error('Error resending OTP:', error);
+      alert('Error resending OTP. Please try again.');
+    }
+  };
+
+
   const [otp, setOtp] = useState(Array(6).fill(""));
 
   const verifyOtp = async () => {
@@ -127,7 +146,8 @@ const EmailForm = () => {
         Verify Email
       </button>
       <p className=" text-[#B8B8B8] mt-5 flex gap-3.5">
-        Didn't receive the code? <strong className="text-black">Resend</strong>
+        Didn't receive the code?
+        <strong className="text-black cursor-pointer" onClick={resendOtp}>Resend</strong>
       </p>
     </div>
   );

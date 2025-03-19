@@ -185,7 +185,9 @@ const LoginForm = () => {
           />
           <img src={passimg} className='w-[22px] h-[22px] mr-6 mt-4 mb-4' />
         </div>
-        <br /><br />
+
+
+        <p className='text-base mt-6 mb-3'>Forgot Password</p>
 
 
         {errorMessage && (
