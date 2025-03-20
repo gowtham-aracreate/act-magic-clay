@@ -37,7 +37,7 @@ const Header = ({ showAllItems }) => {
     userInfo = (
       <div className='mr-2 flex fixed top-2 right-2'>
         <div className='flex-col pt-4'>
-          <p className='font-bold'>Ann</p>
+          <p className='font-bold'>jone</p>
           <p>Buyer</p>
         </div>
         <img src={Ellipse} alt="Ellipse icon" />

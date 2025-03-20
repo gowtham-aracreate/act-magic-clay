@@ -7,6 +7,7 @@ import img4 from '../assets/images/img4.svg'
 import card5 from '../assets/images/0.svg'
 import home1 from '../assets/images/home1.svg'
 import HomePageCard from './HomePageCard'
+import HomeSlides from './HomeSlides'
 
 
 const Home = () => {
@@ -25,9 +26,9 @@ const Home = () => {
                     <a href="#">Security</a>
                     <a href="#">About us</a>
                 </div>
-                <div className=' absolute p-24 '>
+                <div className=' absolute m-28  '>
 
-
+                    <HomeSlides />
 
                 </div>
             </div>
