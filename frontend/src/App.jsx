@@ -12,8 +12,8 @@ import PaymentCard from './Component/PaymentCard'
 import Home from './Component/Home'
 import Dashboard from './layout/Dashboard'
 import OtpValidation from './Component/OtpValidation'
-import HomeSlider from './Component/HomeSlider';
 import DashboardCard from './Component/DashboardCard'
+import HomeSlides from './Component/HomeSlides'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -32,8 +32,8 @@ function App() {
         <Route element={<Home />} path='/home' />
 
 
-        <Route element={<HomeSlider />} path='/homeslider' />
         <Route element={<DashboardCard />} path='/dashboardcard' />
+        <Route element={<HomeSlides />} path='/homeslides' />
 
 
         <Route element={<Dashboard />} path='/dashboard' />
