@@ -49,7 +49,7 @@ const Order = () => {
       {/* Quantity Display */}
       <div className="absolute bottom-[3px] right-[40px]">
         <span className="text-lg text-gray-400">Qty</span>
-        <h2 className="text-lg font-bold font-black">{quantity}</h2>
+        <h2 className="text-lg font-black">{quantity}</h2>
       </div>
 
       {/* Processing Button */}

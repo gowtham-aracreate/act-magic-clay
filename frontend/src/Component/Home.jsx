@@ -1,11 +1,11 @@
-import React from 'react'
+// import React from 'react'
 import card0 from '../assets/images/card0.svg'
 import img1 from '../assets/images/img1.svg'
 import img2 from '../assets/images/img2.svg'
 import img3 from '../assets/images/img3.svg'
 import img4 from '../assets/images/img4.svg'
 import card5 from '../assets/images/0.svg'
-import home1 from '../assets/images/home1.svg'
+// import home1 from '../assets/images/home1.svg'
 import HomePageCard from './HomePageCard'
 
 

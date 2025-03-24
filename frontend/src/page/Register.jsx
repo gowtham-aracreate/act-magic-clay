@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import Auth from '../layout/Auth'
 import RegisterForm from '../Component/RegisterForm'
 

@@ -1,6 +1,4 @@
-import { useState } from 'react';
-
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import axios from 'axios';
 import userimg from '../assets/images/fi-rr-user.png';
 import emailimg from '../assets/images/vector.png';
@@ -137,6 +135,7 @@ const RegisterForm = () => {
         </p>
       </div>
     </div>
+    
   );
 };
 
