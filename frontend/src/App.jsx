@@ -1,34 +1,41 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import './App.css'
-import RegisterForm from './Component/RegisterForm'
+// import RegisterForm from './Component/RegisterForm'
 import Register from './page/Register'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Sample from './Component/Sample';
 import Login from './page/Login'
 import Email from './page/Email'
 import ToggleButton from './Component/ToggleButton'
 // import AddProduct from './Component/AddProduct'
 import Payment from './Component/Payment'
-import PaymentCard from './Component/PaymentCard'
+// import PaymentCard from './Component/PaymentCard'
 import Home from './Component/Home'
 import Dashboard from './layout/Dashboard'
 import OtpValidation from './Component/OtpValidation'
 import DashboardCard from './Component/DashboardCard'
+<<<<<<< HEAD
+import CartPage from './page/CartPage'
+import OrderPage from './page/OrderPage';
+=======
 import HomeSlides from './Component/HomeSlides'
+>>>>>>> f96114a6af2b8820308845ad328211322430b265
 
 function App() {
-  const [count, setCount] = useState(0)
-  const showAllItems = true;
+  // const [count, setCount] = useState(0);
+  // const showAllItems = true;
 
   return (
     <BrowserRouter>
-      <Routes>
-        <Route element={<Register />} path='/register' />
+    <Routes>
+    <Route element={<Register />} path='/register' />
+    <Route element={<div>hi</div>} path='/' />
         <Route element={<Login />} path='/login' />
         <Route element={<ToggleButton />} path='/togglebutton' />
         <Route element={<Email />} path='/email' />
         {/* <Route element={<AddProduct />} path='/addproduct' /> */}
         <Route element={<Payment />} path='/payment' />
-        <Route element={<PaymentCard />} path='/paymentcard' />
+        {/* <Route element={<PaymentCard />} path='/paymentcard' /> */}
         <Route element={<Home />} path='/home' />
 
 
@@ -38,11 +45,12 @@ function App() {
 
         <Route element={<Dashboard />} path='/dashboard' />
         <Route element={<OtpValidation />} path='/otpvalidation' />
-
-      </Routes>
+        <Route element={<Sample />} path='/sample' />
+        <Route element={<CartPage />} path='/cartpage' />
+        <Route element={<OrderPage />} path='/orderpage' />
+    </Routes>
     </BrowserRouter>
-
-  )
+  );
 }
 
-export default App
+export default App;
