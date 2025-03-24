@@ -68,25 +68,71 @@ const EmailForm = () => {
     }
   };
 
+  const resendOtp = async () => {
+    try {
+      const response = await axios.post('http://localhost:5001/resend-otp', {
+        email: localStorage.getItem('email'),
+      });
+
+      if (response.data.success) {
+        setTimer(45);
+        alert('A new OTP has been sent to your email.');
+      } else {
+        alert('Failed to resend OTP.');
+      }
+    } catch (error) {
+      console.error('Error resending OTP:', error);
+      alert('Error resending OTP. Please try again.');
+    }
+  };
+
+
   const [otp, setOtp] = useState(Array(6).fill(""));
+
+  // const verifyOtp = async () => {
+  //   console.log(otp);
+  //   // return;
+  //   try {
+  //     const response = await axios.post('http://localhost:5001/verify-otp', {
+  //       email: localStorage.getItem('email'),
+  //       otp: otp.join('')
+  //     });
+  //     console.log(response.status, response.data)
+  //     if (response.data.success) {
+
+  //       navigate('/dashboard');
+  //     }
+  //   } catch (error) {
+  //     console.error('Error sending OTP:', error);
+  //   }
+  // };
 
   const verifyOtp = async () => {
     console.log(otp);
-    // return;
+
     try {
       const response = await axios.post('http://localhost:5001/verify-otp', {
         email: localStorage.getItem('email'),
-        otp: otp.join('')
+        otp: otp.join(''),
       });
-      console.log(response.status, response.data)
-      if (response.data.success) {
 
+      console.log(response.status, response.data);
+
+      if (response.data.success) {
         navigate('/dashboard');
+      } else {
+        alert('Incorrect OTP! Please try again.');
       }
     } catch (error) {
-      console.error('Error sending OTP:', error);
+      if (error.response && error.response.status === 400) {
+        alert(error.response.data.message || 'Incorrect OTP! Please try again.');
+      } else {
+        console.error('Error sending OTP:', error);
+        alert('An unexpected error occurred. Please try again later.');
+      }
     }
   };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -127,7 +173,8 @@ const EmailForm = () => {
         Verify Email
       </button>
       <p className=" text-[#B8B8B8] mt-5 flex gap-3.5">
-        Didn't receive the code? <strong className="text-black">Resend</strong>
+        Didn't receive the code?
+        <strong className="text-black cursor-pointer" onClick={resendOtp}>Resend</strong>
       </p>
     </div>
   );
