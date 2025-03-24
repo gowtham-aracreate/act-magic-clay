@@ -11,7 +11,7 @@ const RegisterForm = () => {
     name: '',
     email: '',
     password: '',
-    role: 'buyer', // default role
+    role: 'buyer',
   });
 
   const handleChange = (e) => {
@@ -56,8 +56,6 @@ const RegisterForm = () => {
       if (response.status === 201) {
         localStorage.setItem('email', response.data.user.email);
         window.location.href = '/email';
-
-        console.log("hi")// Redirect to login page
       }
     } catch (error) {
       console.error('Registration failed:', error);

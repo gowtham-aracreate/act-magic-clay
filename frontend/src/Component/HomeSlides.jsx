@@ -9,7 +9,7 @@ const HomeSlides = () => {
 
   return (
     <div className="flex justify-center items-center">
-      <div className="max-w-[1400px] h-[628px] w-full">
+      <div className="max-w-[1400px] h-[600px] w-full">
         <Carousel autoSlide={true} >
           {slides.map((s) => (
             <img src={s} />

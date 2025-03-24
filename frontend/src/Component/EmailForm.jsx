@@ -89,23 +89,50 @@ const EmailForm = () => {
 
   const [otp, setOtp] = useState(Array(6).fill(""));
 
+  // const verifyOtp = async () => {
+  //   console.log(otp);
+  //   // return;
+  //   try {
+  //     const response = await axios.post('http://localhost:5001/verify-otp', {
+  //       email: localStorage.getItem('email'),
+  //       otp: otp.join('')
+  //     });
+  //     console.log(response.status, response.data)
+  //     if (response.data.success) {
+
+  //       navigate('/dashboard');
+  //     }
+  //   } catch (error) {
+  //     console.error('Error sending OTP:', error);
+  //   }
+  // };
+
   const verifyOtp = async () => {
     console.log(otp);
-    // return;
+
     try {
       const response = await axios.post('http://localhost:5001/verify-otp', {
         email: localStorage.getItem('email'),
-        otp: otp.join('')
+        otp: otp.join(''),
       });
-      console.log(response.status, response.data)
-      if (response.data.success) {
 
+      console.log(response.status, response.data);
+
+      if (response.data.success) {
         navigate('/dashboard');
+      } else {
+        alert('Incorrect OTP! Please try again.');
       }
     } catch (error) {
-      console.error('Error sending OTP:', error);
+      if (error.response && error.response.status === 400) {
+        alert(error.response.data.message || 'Incorrect OTP! Please try again.');
+      } else {
+        console.error('Error sending OTP:', error);
+        alert('An unexpected error occurred. Please try again later.');
+      }
     }
   };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
