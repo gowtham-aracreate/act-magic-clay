@@ -14,12 +14,9 @@ import Home from './Component/Home'
 import Dashboard from './layout/Dashboard'
 import OtpValidation from './Component/OtpValidation'
 import DashboardCard from './Component/DashboardCard'
-<<<<<<< HEAD
 import CartPage from './page/CartPage'
 import OrderPage from './page/OrderPage';
-=======
 import HomeSlides from './Component/HomeSlides'
->>>>>>> f96114a6af2b8820308845ad328211322430b265
 
 function App() {
   // const [count, setCount] = useState(0);
